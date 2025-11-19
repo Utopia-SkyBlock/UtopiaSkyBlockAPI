@@ -28,6 +28,7 @@
             <groupId>ca.bkaw</groupId>
             <artifactId>paper-nms</artifactId>
             <scope>provided</scope>
+            <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.projectlombok</groupId>
