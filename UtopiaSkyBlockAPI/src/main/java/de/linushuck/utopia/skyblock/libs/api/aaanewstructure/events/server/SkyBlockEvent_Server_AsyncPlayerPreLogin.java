@@ -1,0 +1,22 @@
+package de.linushuck.utopia.skyblock.libs.api.aaanewstructure.events.server;
+
+import de.linushuck.utopia.skyblock.libs.api.eventsystem.SkyBlockEvent;
+import de.linushuck.utopia.skyblock.libs.api.skyblock.enums.SkyBlockServerType;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+import java.util.UUID;
+
+/**
+ * 1. {@link SkyBlockEvent_Server_AsyncPlayerPreLogin} <-- Here are we<br>
+ * 2. {@link SkyBlockEvent_Server_PlayerSpawnLocation}<br>
+ * 3. {@link SkyBlockEvent_Server_PlayerJoin}<br>
+ * 4. {@link SkyBlockEvent_Server_PlayerQuit}
+ */
+@Data
+@AllArgsConstructor
+public class SkyBlockEvent_Server_AsyncPlayerPreLogin extends SkyBlockEvent
+{
+    private final UUID playerUUID;
+    private final SkyBlockServerType server;
+}

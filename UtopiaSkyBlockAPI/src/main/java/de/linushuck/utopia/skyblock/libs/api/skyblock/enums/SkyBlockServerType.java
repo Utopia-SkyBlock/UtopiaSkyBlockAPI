@@ -1,0 +1,29 @@
+package de.linushuck.utopia.skyblock.libs.api.skyblock.enums;
+
+import de.linushuck.utopia.skyblock.libs.api.aaanewstructure.SkyBlockItemBuilder;
+import de.linushuck.utopia.skyblock.libs.api.item.HeadCreator;
+import lombok.Getter;
+import org.bukkit.Material;
+
+public enum SkyBlockServerType
+{
+    UNKNOWN(new SkyBlockItemBuilder(Material.BARRIER)),
+    PRIVATEISLAND(new SkyBlockItemBuilder(HeadCreator.createCustomHead("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNDUyOGVkNDU4MDI0MDBmNDY1YjVjNGUzYTZiN2E5ZjJiNmE1YjNkNDc4YjZmZDg0OTI1Y2M1ZDk4ODM5MWM3ZCJ9fX0="))),
+    TOWN(new SkyBlockItemBuilder(HeadCreator.createCustomHead("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMmUyY2M0MjAxNWU2Njc4ZjhmZDQ5Y2NjMDFmYmY3ODdmMWJhMmMzMmJjZjU1OWEwMTUzMzJmYzVkYjUwIn19fQ=="))),
+    WOODLANDPARK(new SkyBlockItemBuilder(HeadCreator.createCustomHead("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvYWY5ZGI4ZDY3NTE2NjA2ZmNiM2I2NGYzODlhZGY2MTYxM2FhZDY5Yzk1MThhNmNlMjc3ZjlmYTZmYmJlZWU3MyJ9fX0="))),
+    FARMERSYARD(new SkyBlockItemBuilder(HeadCreator.createCustomHead("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNmRlZDg0MzkzYmVjMjUzY2NhNjZjMDQzMTY3MjZhODU4ZTU3NDcxMmI2ZmY5ZjI3MzY2OGRhOThlZmNjMjhmIn19fQ=="))),
+    SANDYCROPLAND(new SkyBlockItemBuilder(HeadCreator.createCustomHead("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZDY2YTgyYWUxOTEwODNmODE3OGY0MjUwZjVlNzNlNDAwOGFiMDk4ZjBlZGUxYzBhZTVmNmE3ZjI2MTM2MzBjZiJ9fX0="))),
+    GOLDENQUARRY(new SkyBlockItemBuilder(HeadCreator.createCustomHead("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMzZkOWJmNWQ0Y2Q4YjY2NGU3ZjU1YzU4YjhlM2E0NjVmY2YyNjlmNmYyOTg1MDA1NWU3ODQyZGQ4MTAxODQxZSJ9fX0="))),
+    ROCKYVEINS(new SkyBlockItemBuilder(HeadCreator.createCustomHead("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjUzMGQ5YjAwZDA3NjEyNWRmOWE1YjE3ZjQzNjcwOTg0NDQyY2U1NzM5ZGViZGJkM2M1MzA0MDkyNjA1MmNhNiJ9fX0="))),
+    WEBBEDCLIFF(new SkyBlockItemBuilder(HeadCreator.createCustomHead("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvMjNkZjBhYzAxMzgxODFkMmZlMjU5NDQwM2MzZDQyYjU5ZjNmZGRjOWM3NTFjNDAyNDkwMzZjNWNlYWIyZjgzNyJ9fX0="))),
+    SHATTEREDEND(new SkyBlockItemBuilder(HeadCreator.createCustomHead("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOTdmMzc3Y2EyZjk1ZTY5MGFlMWQwYTU2NGQ4ZTFmMGZiNTNhNzEwN2IwZWRmM2E0NmMwOTNhZjQ3NWUyMTUyMiJ9fX0="))),
+    INFERNOFORTRESS(new SkyBlockItemBuilder(HeadCreator.createCustomHead("eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNGQ4NTlmN2IzY2RmZGFkNDcxODI4ODRlMTI3ZjQ2MWZlOGY5ZmM1MmY3ZDE1MDQyN2MxMTcwNzliMDkyNGUzIn19fQ=="))),
+    ;
+    @Getter
+    private final SkyBlockItemBuilder itemBuilder;
+
+    SkyBlockServerType(SkyBlockItemBuilder itemBuilder)
+    {
+        this.itemBuilder = itemBuilder;
+    }
+}
