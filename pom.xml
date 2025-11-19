@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <name>Utopia SkyBlock Public API</name>
-    <description>Public API for Utopia SkyBlock plugin development</description>
+    <description>Public API for Utopia SkyBlock plugin development.</description>
     <url>https://github.com/Utopia-SkyBlock/UtopiaSkyBlockAPI</url>
 
     <properties>
