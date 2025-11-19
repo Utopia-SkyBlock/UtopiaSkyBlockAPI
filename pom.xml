@@ -24,7 +24,6 @@
     <modules>
         <module>UtopiaSkyBlockEssentials</module>
         <module>UtopiaSkyBlockAPI</module>
-        <module>FullUtopiaSkyBlockAPI</module>
     </modules>
 
     <scm>
