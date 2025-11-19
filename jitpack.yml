@@ -4,4 +4,4 @@ before_install:
   - sdk install java 21.0.1-open
   - sdk install maven 3.9.6
 install:
-  - source ~/.sdkman/bin/sdkman-init.sh && sdk use java 21.0.1-open && sdk use maven 3.9.6 && mvn -version && mvn ca.bkaw:paper-nms-maven-plugin:1.4.10:init && mvn clean install -DskipTests
+  - source ~/.sdkman/bin/sdkman-init.sh && sdk use java 21.0.1-open && sdk use maven 3.9.6 && mvn -version && mvn ca.bkaw:paper-nms-maven-plugin:1.4.10:init -pl UtopiaSkyBlockAPI && mvn clean install -DskipTests
