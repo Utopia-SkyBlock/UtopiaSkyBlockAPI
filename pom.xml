@@ -26,6 +26,13 @@
         <module>UtopiaSkyBlockAPI</module>
     </modules>
 
+    <pluginRepositories>
+        <pluginRepository>
+            <id>bytecode.space</id>
+            <url>https://repo.bytecode.space/repository/maven-public/</url>
+        </pluginRepository>
+    </pluginRepositories>
+
     <scm>
         <connection>scm:git:git://github.com/Utopia-SkyBlock/UtopiaSkyBlockAPI.git</connection>
         <developerConnection>scm:git:ssh://github.com:Utopia-SkyBlock/UtopiaSkyBlockAPI.git</developerConnection>
@@ -70,6 +77,7 @@
                 <scope>provided</scope>
             </dependency>
 
+            <!-- Paper NMS for Minecraft internals access -->
             <dependency>
                 <groupId>ca.bkaw</groupId>
                 <artifactId>paper-nms</artifactId>

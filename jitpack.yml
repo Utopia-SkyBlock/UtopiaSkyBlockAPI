@@ -6,4 +6,5 @@ before_install:
   - sdk install maven 3.9.6
   - sdk use maven 3.9.6
 install:
+  - mvn ca.bkaw:paper-nms-maven-plugin:1.4.10:init
   - mvn clean install -DskipTests
