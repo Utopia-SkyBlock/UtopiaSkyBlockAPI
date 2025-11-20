@@ -27,6 +27,7 @@
 /projects/Java/Utopia-SkyBlock/Libs/Public/UtopiaSkyBlockAPI/src/main/java/de/linushuck/utopia/skyblock/libs/api/aaanewstructure/gui/items/navigator/PagedGuiAdapter.java
 /projects/Java/Utopia-SkyBlock/Libs/Public/UtopiaSkyBlockAPI/src/main/java/de/linushuck/utopia/skyblock/libs/api/aaanewstructure/gui/items/navigator/ScrollGuiAdapter.java
 /projects/Java/Utopia-SkyBlock/Libs/Public/UtopiaSkyBlockAPI/src/main/java/de/linushuck/utopia/skyblock/libs/api/aaanewstructure/gui/updatereasons/SkyBlockUpdateReasons.java
+/projects/Java/Utopia-SkyBlock/Libs/Public/UtopiaSkyBlockAPI/src/main/java/de/linushuck/utopia/skyblock/libs/api/aaanewstructure/server/SkyBlockServerType.java
 /projects/Java/Utopia-SkyBlock/Libs/Public/UtopiaSkyBlockAPI/src/main/java/de/linushuck/utopia/skyblock/libs/api/ability/AdvancedAbility.java
 /projects/Java/Utopia-SkyBlock/Libs/Public/UtopiaSkyBlockAPI/src/main/java/de/linushuck/utopia/skyblock/libs/api/ability/BaseAbility.java
 /projects/Java/Utopia-SkyBlock/Libs/Public/UtopiaSkyBlockAPI/src/main/java/de/linushuck/utopia/skyblock/libs/api/ability/BlockBreakAbility.java

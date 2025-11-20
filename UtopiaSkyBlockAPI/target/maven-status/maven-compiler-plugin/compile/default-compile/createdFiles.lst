@@ -69,6 +69,7 @@ de/linushuck/utopia/skyblock/libs/api/interfaces/IToastSystem.class
 de/linushuck/utopia/skyblock/libs/api/ComponentHelper.class
 de/linushuck/utopia/skyblock/libs/api/tablist/item/PlayerTabItem.class
 de/linushuck/utopia/skyblock/libs/api/aaanewstructure/gui/NoData.class
+de/linushuck/utopia/skyblock/libs/api/aaanewstructure/server/SkyBlockServerType.class
 de/linushuck/utopia/skyblock/libs/api/tablist/util/Skins.class
 de/linushuck/utopia/skyblock/libs/api/eventsystem/events/ProfileSaveStartEvent.class
 de/linushuck/utopia/skyblock/libs/api/interfaces/IMongoDBConnection.class

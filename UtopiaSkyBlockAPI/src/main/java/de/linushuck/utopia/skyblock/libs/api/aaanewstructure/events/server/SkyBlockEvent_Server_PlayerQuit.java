@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.bukkit.entity.Player;
 
+import java.util.UUID;
+
 /**
  * 1. {@link SkyBlockEvent_Server_AsyncPlayerPreLogin}<br>
  * 2. {@link SkyBlockEvent_Server_PlayerSpawnLocation}<br>
@@ -17,5 +19,5 @@ import org.bukkit.entity.Player;
 public class SkyBlockEvent_Server_PlayerQuit extends SkyBlockEvent
 {
     private final Player player;
-    private final SkyBlockServerType server;
+    private final UUID serverType;
 }
