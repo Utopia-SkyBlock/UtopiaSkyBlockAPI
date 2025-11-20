@@ -51,21 +51,21 @@ public class SkyBlockBlockBreakEvent extends SkyBlockEventCancelable implements 
     {
         System.out.println("BetterBlockBreakEvent.onEvent final method");
 
-        SkyBlockServerType serverNow = PublicSkyBlockAPI.getInstance()
-                .getRedisCommonRequests()
-                .getServerNow(PublicSkyBlockAPI.getInstance().getSkyBlockProfileHelper().getActiveProfile(player));
-        if(player != null && serverNow != SkyBlockServerType.PRIVATEISLAND)
-        {
-            oldEvent.setCancelled(true);
-            SoundDesign.ActionDeny.playSound(player);
-        }
-        else
-        {
-            {
-                setValid(true);
-                drops.addAll(oldEvent.getBlock().getDrops());
-            }
-        }
+        //TODO SkyBlockServerType serverNow = PublicSkyBlockAPI.getInstance()
+        //TODO         .getRedisCommonRequests()
+        //TODO         .getServerNow(PublicSkyBlockAPI.getInstance().getSkyBlockProfileHelper().getActiveProfile(player));
+        //TODO if(player != null && serverNow != SkyBlockServerType.PRIVATEISLAND)
+        //TODO {
+        //TODO     oldEvent.setCancelled(true);
+        //TODO     SoundDesign.ActionDeny.playSound(player);
+        //TODO }
+        //TODO else
+        //TODO {
+        //TODO     {
+        //TODO         setValid(true);
+        //TODO         drops.addAll(oldEvent.getBlock().getDrops());
+        //TODO     }
+        //TODO }
     }
 
     public ItemStack getToolCopy()
