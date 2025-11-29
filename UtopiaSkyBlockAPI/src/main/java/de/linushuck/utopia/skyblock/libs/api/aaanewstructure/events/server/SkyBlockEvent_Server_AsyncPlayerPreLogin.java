@@ -18,5 +18,5 @@ import java.util.UUID;
 public class SkyBlockEvent_Server_AsyncPlayerPreLogin extends SkyBlockEvent
 {
     private final UUID playerUUID;
-    private final SkyBlockServerType server;
+    private final UUID serverType;
 }

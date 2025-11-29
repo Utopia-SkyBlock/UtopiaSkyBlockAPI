@@ -3,6 +3,7 @@ package de.linushuck.utopia.skyblock.libs.essentials;
 import lombok.Getter;
 import lombok.Setter;
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.logger.slf4j.ComponentLogger;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.slf4j.event.Level;
 
@@ -14,8 +15,9 @@ public class Logger
     private static final HashMap<Level, Boolean> levelStates = new HashMap<>();
     @Getter
     public static HashMap<String, BiConsumer<Level, String>> customLoggers = new HashMap<>();
-    @Setter
     private static JavaPlugin plugin;
+    @Setter
+    private static ComponentLogger componentLogger;
     @Setter
     @Getter
     private static boolean isDebugEnabled = false;
@@ -29,7 +31,7 @@ public class Logger
         levelStates.put(Level.TRACE, true);
     }
 
-    private static void log(String objClassName, Level level, Object message, String... args)
+    public static void log(String objClassName, Level level, Object message, String... args)
     {
         if(!(message instanceof String) && !(message instanceof Component))
         {
@@ -42,7 +44,7 @@ public class Logger
         }
 
         String string = objClassName == null || objClassName.trim().isEmpty() ? "" : objClassName;
-        if(plugin != null)
+        if(componentLogger != null)
         {
             String prefix = string.isEmpty() ? "<white>" : "<white>[<green>" + string + "</green>]</white> ";
 
@@ -72,19 +74,19 @@ public class Logger
             }
             switch(level)
             {
-                case WARN -> plugin.getComponentLogger().warn(finalMessage);
-                case ERROR -> plugin.getComponentLogger().error(finalMessage);
+                case WARN -> componentLogger.warn(finalMessage);
+                case ERROR -> componentLogger.error(finalMessage);
                 case DEBUG ->
                 {
                     if(!isDebugEnabled && !levelStates.getOrDefault(Level.DEBUG, false))
                     {
                         return;
                     }
-                    plugin.getComponentLogger()
+                    componentLogger
                             .info(BaseComponentHelper.mini("<yellow>DEBUG: </yellow>").append(finalMessage));
                 }
-                case TRACE -> plugin.getComponentLogger().trace(finalMessage);
-                default -> plugin.getComponentLogger().info(finalMessage);
+                case TRACE -> componentLogger.trace(finalMessage);
+                default -> componentLogger.info(finalMessage);
             }
         }
         else
@@ -173,13 +175,27 @@ public class Logger
     public static void error(Object caller, Object message, Exception e, String... args)
     {
         log(getCallerName(caller), Level.ERROR, message, args);
-        plugin.getLogger().log(java.util.logging.Level.SEVERE, e.getMessage(), e);
+        if(plugin != null)
+        {
+            plugin.getLogger().log(java.util.logging.Level.SEVERE, e.getMessage(), e);
+        }
+        else {
+            System.err.println("Error: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     public static void error(Object caller, Exception e, String... args)
     {
         log(getCallerName(caller), Level.ERROR, "Error", args);
-        plugin.getLogger().log(java.util.logging.Level.SEVERE, e.getMessage(), e);
+        if(plugin != null)
+        {
+            plugin.getLogger().log(java.util.logging.Level.SEVERE, e.getMessage(), e);
+        }
+        else {
+            System.err.println("Error: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     public static void error(Object message, String... args)
@@ -223,7 +239,7 @@ public class Logger
         }
     }
 
-    private static String getCallerName(Object caller)
+    public static String getCallerName(Object caller)
     {
         if(caller == null)
         {
@@ -252,5 +268,11 @@ public class Logger
         {
             isDebugEnabled = true;
         }
+    }
+
+    public static void setPlugin(JavaPlugin plugin)
+    {
+        Logger.plugin = plugin;
+        Logger.componentLogger = plugin.getComponentLogger();
     }
 }
