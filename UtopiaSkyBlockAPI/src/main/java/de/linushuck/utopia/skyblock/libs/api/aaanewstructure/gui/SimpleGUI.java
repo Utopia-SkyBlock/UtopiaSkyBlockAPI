@@ -1,10 +1,14 @@
 package de.linushuck.utopia.skyblock.libs.api.aaanewstructure.gui;
 
 import de.linushuck.utopia.skyblock.libs.api.PublicSkyBlockAPI;
+import de.linushuck.utopia.skyblock.libs.api.item.NewItemUtils;
 import lombok.Getter;
 import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+import xyz.xenondevs.invui.gui.Gui;
+import xyz.xenondevs.invui.inventory.OperationCategory;
+import xyz.xenondevs.invui.inventory.ReferencingInventory;
 import xyz.xenondevs.invui.window.Window;
 
 import java.util.HashMap;
@@ -54,11 +58,31 @@ public abstract class SimpleGUI<T>
     {
         saveNavBack(player, navBackGUI);
         Window window = openGUIInternally(player, options, navBackGUI);
+
         Bukkit.getScheduler().runTaskAsynchronously(PublicSkyBlockAPI.getInstance().getPlugin(), () ->
         {
             saveOptions(player, options);
             Bukkit.getScheduler().runTask(PublicSkyBlockAPI.getInstance().getPlugin(), window::open);
         });
+    }
+
+    public Gui getPlayerInventory(Player player) {
+
+        ReferencingInventory inv = ReferencingInventory.fromPlayerStorageContents(player.getInventory());
+        inv.setGuiPriority(OperationCategory.ADD, Integer.MAX_VALUE);
+        inv.setGuiPriority(OperationCategory.COLLECT, Integer.MIN_VALUE);
+
+        Gui lowerGui = Gui.of(9,4,inv);
+        inv.addPreUpdateHandler(itemPreUpdateEvent -> {
+            if (itemPreUpdateEvent.getNewItem()!=null && NewItemUtils.getItemID(itemPreUpdateEvent.getNewItem()).equals("menu_nether_star")) {
+                itemPreUpdateEvent.setCancelled(true);
+            }
+            if (itemPreUpdateEvent.getPreviousItem()!=null && NewItemUtils.getItemID(itemPreUpdateEvent.getPreviousItem()).equals("menu_nether_star")) {
+                itemPreUpdateEvent.setCancelled(true);
+            }
+
+        });
+        return lowerGui;
     }
 
     public void openGUI(Player player, T options)
