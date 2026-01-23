@@ -49,24 +49,24 @@ public class SkyBlockBlockPlaceEvent extends SkyBlockEventCancelable implements 
         {
             return;
         }
-        SkyBlockServerType serverNow = PublicSkyBlockAPI.getInstance()
-                .getRedisCommonRequests()
-                .getServerNow(PublicSkyBlockAPI.getInstance().getSkyBlockProfileHelper().getActiveProfile(player));
+        //TODO SkyBlockServerType serverNow = PublicSkyBlockAPI.getInstance()
+        //TODO         .getRedisCommonRequests()
+        //TODO         .getServerNow(PublicSkyBlockAPI.getInstance().getSkyBlockProfileHelper().getActiveProfile(player));
 
 
-        if(serverNow != SkyBlockServerType.PRIVATEISLAND)
-        {
-            oldEvent.setCancelled(true);
-            //TODO Linus SoundDesign.ActionDeny.playSound(player, Sound.Emitter.self());
-        }
-        else
-        {
-            if(!Objects.equals(getNormalItemID(), "null"))
-            {
-                oldEvent.setCancelled(true);
-                //TODO Linus SoundDesign.ActionDeny.playSound(player, Sound.Emitter.self());
-            }
-        }
+        //TODO if(serverNow != SkyBlockServerType.PRIVATEISLAND)
+        //TODO {
+        //TODO     oldEvent.setCancelled(true);
+        //TODO     //TODO Linus SoundDesign.ActionDeny.playSound(player, Sound.Emitter.self());
+        //TODO }
+        //TODO else
+        //TODO {
+        //TODO     if(!Objects.equals(getNormalItemID(), "null"))
+        //TODO     {
+        //TODO         oldEvent.setCancelled(true);
+        //TODO         //TODO Linus SoundDesign.ActionDeny.playSound(player, Sound.Emitter.self());
+        //TODO     }
+        //TODO }
     }
 
 

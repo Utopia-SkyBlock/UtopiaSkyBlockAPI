@@ -197,6 +197,36 @@ public class ResourceUtils
     }
 
     /**
+     * Removes all files from cache that start with the given prefix
+     * Useful for freeing memory after extracting large folders like world files
+     *
+     * @param prefix The prefix to match (e.g., "skyblock-world/")
+     * @return Number of files removed
+     */
+    public static int removeByPrefix(String prefix)
+    {
+        if(!prefix.endsWith("/"))
+        {
+            prefix = prefix + "/";
+        }
+
+        final String finalPrefix = prefix;
+        List<String> keysToRemove = fileContentsCache.keySet().stream()
+                .filter(key -> key.startsWith(finalPrefix))
+                .toList();
+
+        keysToRemove.forEach(fileContentsCache::remove);
+
+        int removed = keysToRemove.size();
+        if(removed > 0)
+        {
+            Logger.info(ResourceUtils.class, "Removed " + removed + " files from cache (prefix: " + finalPrefix + ")");
+        }
+
+        return removed;
+    }
+
+    /**
      * Helper method to read all bytes from an InputStream
      */
     private static byte[] readAllBytes(InputStream is) throws IOException
